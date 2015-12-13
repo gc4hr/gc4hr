@@ -13,7 +13,19 @@ d3.csv(path, function(error, data) {
             .append("figure")
             .attr("class", "effect-sadie")
             .style("background-image", "url(" + d["Link to picture"] + ")")
-            .style("background-size", "cover");
+            .style("background-size", "cover")
+            .append("a")
+            .attr("href", function() {
+                if (d.Name === "Nabeel Rajab") {
+                    return "profilepage.html";
+                } else if (d.Name === "Atena Farghadani") {
+                    return "profilepage2.html";
+                } else if (d.Name === "Bassel Khartabil") {
+                    return "profilepage3.html";
+                } else {
+                    return "#";
+                }
+            });
 
         var figcaption = figure.append("figcaption");
 
